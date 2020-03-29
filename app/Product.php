@@ -9,6 +9,7 @@ class Product extends Model
     protected $fillable = [
         'title', 'description', 'unit',
         'price', 'total', 'category_id',
+        'options', 'discount'
     ];
 
     public function images(){
@@ -21,5 +22,9 @@ class Product extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
     }
 }

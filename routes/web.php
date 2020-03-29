@@ -11,6 +11,22 @@
 |
 */
 //Route::get('unit-fill', 'ImportController@importUnits');
+//Route::get('tag',function (){
+//    $product = \App\Product::find(1);
+//   //return $tag->products ;
+//   return $product->tags ;
+//});
+
+Route::get('role',function (){
+    $role = \App\Role::find(2);
+    //return $tag->products ;
+    return $role->users;
+});
+
+Route::get('users',function (){
+    $user =\App\User::find(501);
+    return $user->roles;
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,5 +39,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('test', function (){
     return 'TmTam';
 })->middleware([
-    'auth' , 'email_verified'
+    'auth' ,'is_admin' ,'is_support'
 ]);
