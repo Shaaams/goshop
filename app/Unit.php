@@ -17,6 +17,6 @@ class Unit extends Model
 
     public function formated()
     {
-        return $this->unit_name . ' - ' . $this->unit_code ;
+        return $this->unit_name . ' - ' . $this->unit_code;
     }
 }
