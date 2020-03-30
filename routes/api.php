@@ -13,13 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
+// Get Categories
+Route::get('categories', 'Api\CategoryController@index');
+Route::get('categories/{id}', 'Api\CategoryController@show');
+// Get Tags
+Route::get('tags', 'Api\TagController@index');
+Route::get('tags/{id}', 'Api\TagController@show');
+// Get Products
+Route::get('products', 'Api\ProductController@index');
+Route::get('products/{id}', 'Api\ProductController@show');
 
-//Route::get('/products', function (Request $request){
-//    return \App\Product::all();
-//});
 
-Route::middleware('auth:api')->get('/products', function (Request $request) {
-//    return $request->user();
-    return \App\Product::all();
+
+Route::group(['auth:api'], function(){
 
 });
+//Route::middleware('auth:api')->get('/products', function (Request $request) {
+////    return $request->user();
+//    return \App\Product::all();
+//
+//});

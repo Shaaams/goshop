@@ -16,6 +16,9 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
+    //this Product belongsto one category
+
+
     public function reviews(){
         return $this->hasMany(Review::class);
     }
