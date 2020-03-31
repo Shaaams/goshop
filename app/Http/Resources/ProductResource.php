@@ -24,7 +24,7 @@ class ProductResource extends JsonResource
             'product_total'       =>$this->total,
             'product_discount'    =>$this->discount,
             'product_category'    =>$this->category,
-            'product_tag'         =>new TagResource($this->tags),
+            'product_tag'         =>$this->tags,
         ];
     }
 }
